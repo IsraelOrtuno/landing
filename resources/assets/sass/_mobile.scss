@@ -1,0 +1,68 @@
+/**
+ * Mobile
+ */
+html, body {
+  color: $white;
+  .container{
+    .is-fluid{
+      margin: 0 !important;
+    }
+  }
+}
+
+
+.parallax {
+  position: relative;
+  /* The image used */
+  /* Full height */
+  height: 230px;
+
+  /* Create the parallax scrolling effect */
+  //background-attachment: fixed;
+  background: url('/images/alicante-skyline.svg') no-repeat center top;
+  background-size: cover;
+  h1.title, h2.subtitle {
+    animation: change-color-to-white 25s linear forwards;
+  }
+  .hero {
+    h1.title {
+      font-weight: 600 !important;
+      font-size: 38px;
+      color: #363636;
+    }
+    h2.subtitle {
+      font-weight: 300 !important;
+      color: #363636;
+    }
+    &.is-image {
+      background: transparent;
+    }
+  }
+}
+
+.hero.is-dark {
+  margin-top: -10px;
+}
+
+.is-white {
+  color: $white !important;
+}
+.is-clear {
+  background-color: $white;
+}
+
+
+.has-normal-font {
+  font-weight: 400;
+}
+
+
+.nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.nav-menu-show {
+  display: block;
+}

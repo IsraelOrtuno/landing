@@ -1,0 +1,83 @@
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600);
+
+// Variables
+@import "variables";
+
+// Bulma
+@import "../../../node_modules/bulma/bulma";
+
+html, body {
+  background-color: #535254;
+  color: #faf2cc;
+  font-family: 'Raleway';
+  font-weight: 100 !important;
+  margin: 0;
+  height: 100vh;
+}
+
+#app {
+  height: 100vh;
+  overflow: scroll;
+}
+
+.is-clear {
+  background-color: $white;
+  color: $primary;
+}
+
+.bottom-line {
+  position: absolute;
+  background-color: #535254;
+  bottom: -5px;
+  width: 100%;
+  height: 10px;
+}
+
+@import "mobile";
+@media only screen and (min-width: 980px) {
+  @import "desktop";
+}
+
+.links > a {
+  color: $white;
+  padding: 0 25px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+figure + .title {
+  margin-top: 1em;
+}
+
+a.image.sponsor:not(.button) {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  display: block;
+
+  img {
+    height: 55px;
+    width: auto !important;
+    display: inline;
+  }
+}
+
+.nav-item a, a.nav-item {
+  color: #535254;
+  font-weight: 400;
+}
+
+
+@keyframes change-color-to-white {
+  0% {
+    color: #535254;
+  }
+  100% {
+    color: $white;
+  }
+}
+
