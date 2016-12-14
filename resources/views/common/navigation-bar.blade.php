@@ -13,9 +13,9 @@
         </span>
 
         <div class="nav-right nav-menu" :class="{'nav-menu-show' : menu}">
-            <a href="/#ponentes" class="nav-item has-text-centered">Ponentes</a>
-            <a href="/#localizacion" class="nav-item has-text-centered">Localizacion</a>
-            <a href="/#esponsors" class="nav-item has-text-centered">Espónsors</a>
+            <a href="/#speakers" class="nav-item has-text-centered">Speakers</a>
+            <a href="/#localizacion" class="nav-item has-text-centered">Localización</a>
+            <a href="/#sponsors" class="nav-item has-text-centered">Sponsors</a>
         </div>
     </div>
 </nav>

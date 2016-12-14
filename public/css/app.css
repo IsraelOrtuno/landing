@@ -6371,6 +6371,11 @@ html .container .is-fluid, body .container .is-fluid {
   text-transform: uppercase;
 }
 
+.links.logos > a img {
+  color: white;
+  width: 150px;
+}
+
 figure + .title {
   margin-top: 1em;
 }
@@ -6390,6 +6395,10 @@ a.image.sponsor:not(.button) img {
 .nav-item a, a.nav-item {
   color: #535254;
   font-weight: 400;
+}
+
+[v-cloak] {
+  display: none;
 }
 
 @-webkit-keyframes change-color-to-white {

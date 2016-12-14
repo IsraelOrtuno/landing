@@ -17,6 +17,19 @@ require('vue-resource');
 let mb = require('mobile-detect')
 window.MobileDetect = new mb(window.navigator.userAgent);
 
+/**
+ * Initialize Vee Validate
+ */
+import VeeValidate from 'vee-validate';
+import Spanish from 'vee-validate/dist/locale/es'
+Vue.use(VeeValidate, {
+  locale: 'es',
+  dictionary: {
+    es: {   // locale key
+      messages: Spanish
+    }
+  }
+});
 
 /**
  * VueScroll

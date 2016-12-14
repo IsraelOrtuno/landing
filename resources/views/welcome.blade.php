@@ -15,15 +15,30 @@
                         <h2 class="subtitle is-3 has-text-centered">
                             1ª Conferencia Laravel & VueJs en España
                         </h2>
+                        <h3 class="subtitle is-4 has-text-centered">
+                            Alicante
+                        </h3>
                     </div>
                 </div>
             </section>
             <div class="columns">
                 <div class="column is-one-third is-offset-one-third">
+
                     <div class="links level" v-if="showLinks">
-                        <a href="/#ponentes" class="level-item has-text-centered">Ponentes</a>
+                        <a href="/#speakers" class="level-item has-text-centered">Speakers</a>
                         <a href="/#localizacion" class="level-item has-text-centered">Localizacion</a>
-                        <a href="/#esponsors" class="level-item has-text-centered">Espónsors</a>
+                        <a href="/#sponsors" class="level-item has-text-centered">Sponsors</a>
+                    </div>
+
+                    <div class="links level logos" v-if="showLinks">
+                        <a href="http://laravel.com" target="_blank" class="level-item has-text-centered">
+                            <img src="/images/laravel.png" alt="Laravel">
+                        </a>
+                        <span class="title is-1 is-white"> + </span>
+                        <a href="http://vuejs.org" target="_blank"  class="level-item has-text-centered">
+                            <img src="/images/vuejs.png" alt="VueJS">
+                        </a>
+
                     </div>
                 </div>
             </div>
@@ -37,24 +52,37 @@
                 <div class="column is-half is-offset-one-quarter">
                     <section class="content is-large has-text-centered is-secondary is-white has-normal-font">
                         <p>
-                            Apuntate ya para ser de los primeros en poder acceder a los tickets, antes de que salgan
+                            Apúntate ya para ser de los primeros en poder acceder a los tickets, antes de que salgan
                             a la venta para todo el mundo.
                         </p>
-                        <div class="control is-grouped" v-if="!isMobile">
-                            <p class="control is-expanded has-icon has-icon-right">
-                                <input class="input is-large has-text-centered" type="email" placeholder="Email">
-                                <i class="fa fa-check"></i>
-                            </p>
-                            <p class="control">
-                                <a class="button is-large is-primary is-outlined">Avisame</a>
-                            </p>
+                        <div class="notification is-danger" v-if="errors.has('email')" v-cloak>
+                            @{{ errors.first('email') }}
                         </div>
-                        <p class="control has-addons" v-if="isMobile">
-                            <input class="input is-expanded has-text-centered" type="email" placeholder="Email">
-                            <a class="button is-primary is-outlined">
-                                Avisame
-                            </a>
-                        </p>
+
+                        <div class="notification is-primary" v-if="response" v-cloak>
+                            @{{ response }}
+                        </div>
+                        <form @submit="validateBeforeSubmit" v-if="!response">
+                            <div class="control is-grouped is-desktop" v-if="!isMobile" v-cloak>
+                                <p class="control is-expanded has-icon has-icon-right" v-cloak>
+                                    <input class="input is-large has-text-centered" :class="{'is-danger' : errors.has('email')}" v-validate
+                                           data-vv-rules="required|email" type="email" name="email" placeholder="Email"
+                                           v-cloak  v-model="email">
+                                    <i class="fa fa-check"></i>
+                                </p>
+                                <p class="control" v-cloak>
+                                    <button :disabled="busy" type="submit"class="button is-large is-primary is-outlined" v-cloak>Avísame</button>
+                                </p>
+                            </div>
+                            <p class="control has-addons is-mobile" v-if="isMobile" v-cloak >
+                                <input class="input is-expanded has-text-centered" v-validate data-vv-rules="required|email"
+                                       type="email" placeholder="Email" v-cloak name="email"
+                                       v-model="email">
+                                <button :disabled="busy" type="submit" class="button is-primary is-outlined" v-cloak>
+                                    Avísame
+                                </button>
+                            </p>
+                        </form>
                     </section>
                 </div>
             </div>
@@ -62,127 +90,59 @@
     </div>
 
     <div class="hero is-medium is-clear">
-        <a name="ponentes"> </a>
+        <a name="speakers"> </a>
         <div class="hero-body">
             <div class="columns">
                 <div class="column is-half is-offset-one-quarter">
                     <section class="content is-large has-text-centered is-secondary has-normal-font">
                         <h1 class="title">
-                            Ponentes
+                            Speakers
                         </h1>
                         <div class="columns">
                             <div class="column">
                                 <article class="tile is-child box">
-                                    <figure class="image is-4by3">
-                                        <img src="http://placehold.it/640x480">
+                                    <figure class="image is-1by1">
+                                        <img src="/images/speakers/@alexjoverm.jpg">
                                     </figure>
-                                    <p class="title">Alex Jover</p>
-                                    <p class="subtitle">@alexjover</p>
+                                    <p class="title">Alex Jover Morales</p>
+                                    <p class="subtitle">
+                                        <a href="https://twitter.com/alexjoverm" target="_blank">@alexjoverm</a>
+                                    </p>
                                 </article>
                             </div>
                             <div class="column">
                                 <article class="tile is-child box">
-                                    <figure class="image is-4by3">
-                                        <img src="http://placehold.it/640x480">
+                                    <figure class="image is-1by1">
+                                        <img src="/images/speakers/@esclapes.jpg">
                                     </figure>
-                                    <p class="title">Eduardo Esclapes</p>
-                                    <p class="subtitle">@esclapes</p>
+                                    <p class="title">Eduardo Esclapés</p>
+                                    <p class="subtitle">
+                                        <a href="https://twitter.com/esclapes" target="_blank">@esclapes</a>
+                                    </p>
                                 </article>
                             </div>
                             <div class="column">
                                 <article class="tile is-child box">
-                                    <figure class="image is-4by3">
-                                        <img src="http://placehold.it/640x480">
+                                    <figure class="image is-1by1">
+                                        <img src="/images/speakers/@boudydegeer.jpg">
                                     </figure>
                                     <p class="title">Boudy de Geer</p>
-                                    <p class="subtitle">@boudydegeer</p>
-                                </article>
-                            </div>
-                        </div>
-                        <div class="columns">
-                            <div class="column">
-                                <article class="tile is-child box">
-                                    <figure class="image is-4by3">
-                                        <img src="http://placehold.it/640x480">
-                                    </figure>
-                                    <p class="title">Alex Jover</p>
-                                    <p class="subtitle">@alexjover</p>
+                                    <p class="subtitle">
+                                        <a href="https://twitter.com/boudydegeer" target="_blank">@boudydegeer</a>
+                                    </p>
                                 </article>
                             </div>
                             <div class="column">
                                 <article class="tile is-child box">
-                                    <figure class="image is-4by3">
-                                        <img src="http://placehold.it/640x480">
+                                    <figure class="image is-1by1">
+                                        <img src="https://placeholdit.imgix.net/~text?txtsize=60&txt=%C2%BFTienes%20algo%20que%20contar?&w=400&h=400">
                                     </figure>
-                                    <p class="title">Eduardo Esclapes</p>
-                                    <p class="subtitle">@esclapes</p>
-                                </article>
-                            </div>
-                            <div class="column">
-                                <article class="tile is-child box">
-                                    <figure class="image is-4by3">
-                                        <img src="http://placehold.it/640x480">
-                                    </figure>
-                                    <p class="title">Boudy de Geer</p>
-                                    <p class="subtitle">@boudydegeer</p>
-                                </article>
-                            </div>
-                        </div>
-                        <div class="columns">
-                            <div class="column">
-                                <article class="tile is-child box">
-                                    <figure class="image is-4by3">
-                                        <img src="http://placehold.it/640x480">
-                                    </figure>
-                                    <p class="title">Alex Jover</p>
-                                    <p class="subtitle">@alexjover</p>
-                                </article>
-                            </div>
-                            <div class="column">
-                                <article class="tile is-child box">
-                                    <figure class="image is-4by3">
-                                        <img src="http://placehold.it/640x480">
-                                    </figure>
-                                    <p class="title">Eduardo Esclapes</p>
-                                    <p class="subtitle">@esclapes</p>
-                                </article>
-                            </div>
-                            <div class="column">
-                                <article class="tile is-child box">
-                                    <figure class="image is-4by3">
-                                        <img src="http://placehold.it/640x480">
-                                    </figure>
-                                    <p class="title">Boudy de Geer</p>
-                                    <p class="subtitle">@boudydegeer</p>
-                                </article>
-                            </div>
-                        </div>
-                        <div class="columns">
-                            <div class="column">
-                                <article class="tile is-child box">
-                                    <figure class="image is-4by3">
-                                        <img src="http://placehold.it/640x480">
-                                    </figure>
-                                    <p class="title">Alex Jover</p>
-                                    <p class="subtitle">@alexjover</p>
-                                </article>
-                            </div>
-                            <div class="column">
-                                <article class="tile is-child box">
-                                    <figure class="image is-4by3">
-                                        <img src="http://placehold.it/640x480">
-                                    </figure>
-                                    <p class="title">Eduardo Esclapes</p>
-                                    <p class="subtitle">@esclapes</p>
-                                </article>
-                            </div>
-                            <div class="column">
-                                <article class="tile is-child box">
-                                    <figure class="image is-4by3">
-                                        <img src="http://placehold.it/640x480">
-                                    </figure>
-                                    <p class="title">Boudy de Geer</p>
-                                    <p class="subtitle">@boudydegeer</p>
+                                    <p class="title">Aquí tu nombre</p>
+                                    <p class="subtitle">
+                                        <a href="mailto:team+speaker@webartisans.es">
+                                            Envianos un email
+                                        </a>
+                                    </p>
                                 </article>
                             </div>
                         </div>
@@ -205,7 +165,7 @@
                                 <p>
                                     Un gran evento necesita unas grandes instalaciones. El auditorio de ULab en el
                                     centro
-                                    de Alicante es idoneo para un evento de estas caracteristicas.
+                                    de Alicante es idóneo para un evento de estas características.
                                 </p>
                                 <p>
                                     Capacidad máxima para 110 personas. En pleno centro de la ciudad y a 5 min. de la
@@ -215,7 +175,7 @@
 
                             <div class="column is-half">
                                 <figure class="image is-4by3">
-                                    <img src="/images/ulab-1.jpg">
+                                    <img src="/images/ulab.jpg">
                                 </figure>
                             </div>
 
@@ -230,28 +190,28 @@
 
 
     <div class="hero is-medium is-dark">
-        <a name="esponsors"></a>
+        <a name="sponsors"></a>
         <div class="hero-body">
             <div class="columns">
                 <div class="column is-half is-offset-one-quarter">
                     <section class="content is-large has-text-centered is-secondary has-normal-font">
                         <h1 class="title">
-                            Espónsors
+                            Sponsors
                         </h1>
 
                         <h3 class="subtitle is-4">
-                            Por supuesto todo esto no seria posible sin la colaboración de nuestros esponsors.
+                            Por supuesto todo esto no sería posible sin la colaboración de nuestros sponsors.
                         </h3>
                         <div class="columns">
                             <div class="column is-half">
                                 <a href="http://laraveles.com" class="image sponsor has-text-centered">
-                                        <img src="/images/laraveles.png">
+                                        <img src="/images/sponsors/laraveles.png">
                                 </a>
                             </div>
 
                             <div class="column is-half">
                                 <a href="https://vuejobs.com" class="image sponsor has-text-centered">
-                                        <img src="/images/vuejobs.png">
+                                        <img src="/images/sponsors/vuejobs.png">
                                 </a>
                             </div>
                         </div>
@@ -259,20 +219,26 @@
                         <div class="columns">
                             <div class="column">
                                 <a href="https://coosto.com" class="image sponsor has-text-centered">
-                                        <img src="/images/coosto.png">
+                                        <img src="/images/sponsors/coosto.png">
                                 </a>
                             </div>
                             <div class="column">
                                 <a href="https://mosaiqo.com" class="image sponsor has-text-centered">
-                                        <img src="/images/mosaiqo.png">
+                                        <img src="/images/sponsors/mosaiqo.png">
                                 </a>
                             </div>
                             <div class="column">
                                 <a href="https://ulab.es" class="image sponsor has-text-centered">
-                                        <img src="/images/ulab.png">
+                                        <img src="/images/sponsors/ulab.png">
                                 </a>
                             </div>
                         </div>
+
+
+                        <p class="subtitle is-6">
+                            Si quieres patrocinar el evento, ponte en contacto con nosotros
+                            <a href="mailt:team@webatrisans.es">team+sponsor@webatrisans.es</a>.
+                        </p>
                     </section>
                 </div>
             </div>

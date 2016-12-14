@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Web Artisans') }}</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -21,6 +21,7 @@
     </script>
 </head>
 <body>
+    @include('resources.analytics')
     <div id="app" v-scroll="onScroll">
         @include('common.navigation-bar')
 

@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * include Vue and Vue Resource. This gives a great starting point for
@@ -17,9 +16,12 @@ const app = new Vue({
   name: 'WebArtisans',
   el: '#app',
   data: {
+    busy: false,
+    response: '',
     position: 0,
     menu: false,
-    isMobile: MobileDetect.phone()
+    isMobile: MobileDetect.phone(),
+    email: '',
   },
 
   computed: {
@@ -27,7 +29,7 @@ const app = new Vue({
       return this.position.scrollTop >= (this.isMobile ? 50 : 315);
     },
     showLinks(){
-      return (this.position != 0 ||!this.showMenu) && !this.isMobile;
+      return (this.position != 0 || !this.showMenu) && !this.isMobile;
     },
   },
 
@@ -36,13 +38,36 @@ const app = new Vue({
 
   methods: {
     toggleMenu() {
-      this.menu  = !this.menu
-      console.log("alo")
+      this.menu = !this.menu
     },
+
     onScroll(e, position) {
-      console.log(position)
-      console.log(this.showMenu)
       this.position = position;
+    },
+
+    validateBeforeSubmit(e) {
+      this.$validator.validateAll();
+      e.preventDefault()
+      if (!this.errors.any()) {
+        this.subscribe()
+      }
+    },
+
+    subscribe(){
+      this.busy = true;
+      if (!this.errors.any()) {
+        this.$http.post('api/subscriptions', {
+          'email': this.email
+        }).then(
+          (response) => {
+            this.response = response.data.message
+            this.busy = false
+          },
+          () => {
+            this.busy = false
+          }
+        )
+      }
+      }
     }
-  }
-});
+  });
