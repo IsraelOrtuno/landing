@@ -21,7 +21,7 @@ html, body {
   //background-attachment: fixed;
   background: url('/images/alicante-skyline.svg') no-repeat center top;
   background-size: cover;
-  h1.title, h2.subtitle {
+  h1.title, h2.subtitle, h3.subtitle {
     animation: change-color-to-white 25s linear forwards;
   }
   .hero {

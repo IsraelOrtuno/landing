@@ -12,10 +12,10 @@
                         <h4 class="subtitle is-6 has-text-centered has-text-centered">
 
                         </h4>
-                        <h2 class="subtitle is-3 has-text-centered">
+                        <h2 class="subtitle is-3 has-text-centered is-desktop" v-if="!isMobile" v-cloak>
                             1ª Conferencia Laravel & VueJs en España
                         </h2>
-                        <h3 class="subtitle is-4 has-text-centered">
+                        <h3 class="subtitle is-4 has-text-centered is-desktop" v-cloak v-if="!isMobile">
                             Alicante
                         </h3>
                     </div>
@@ -23,22 +23,20 @@
             </section>
             <div class="columns">
                 <div class="column is-one-third is-offset-one-third">
-
-                    <div class="links level" v-if="showLinks">
+                    <div class="links level" v-if="showLinks" v-cloak>
                         <a href="/#speakers" class="level-item has-text-centered">Speakers</a>
                         <a href="/#localizacion" class="level-item has-text-centered">Localizacion</a>
                         <a href="/#sponsors" class="level-item has-text-centered">Sponsors</a>
                     </div>
 
-                    <div class="links level logos" v-if="showLinks">
+                    <div class="links level logos" v-if="showLinks && !isMobile" v-cloak>
                         <a href="http://laravel.com" target="_blank" class="level-item has-text-centered">
                             <img src="/images/laravel.png" alt="Laravel">
                         </a>
                         <span class="title is-1 is-white"> + </span>
-                        <a href="http://vuejs.org" target="_blank"  class="level-item has-text-centered">
+                        <a href="http://vuejs.org" target="_blank" class="level-item has-text-centered">
                             <img src="/images/vuejs.png" alt="VueJS">
                         </a>
-
                     </div>
                 </div>
             </div>
@@ -46,6 +44,32 @@
         </div>
     </div>
 
+    <div class="hero is-clear is-mobile" v-if="isMobile" v-cloak>
+        <div class="hero-body">
+            <div class="columns  is-mobile">
+                <div class="column">
+                    <h2 class="subtitle is-3 has-text-centered is-mobile">
+                        1ª Conferencia Laravel & VueJs en España
+                    </h2>
+                    <h3 class="subtitle is-4 has-text-centered is-mobile">
+                        Alicante
+                    </h3>
+                </div>
+            </div>
+            <div class="columns is-mobile">
+                <div class="column has-text-centered">
+                    <div class="links level logos" v-if="isMobile">
+                        <img src="/images/laravel.png" alt="Laravel">
+                    </div>
+                </div>
+                <div class="column has-text-centered">
+                    <div class="links level logos" v-if="isMobile">
+                        <img src="/images/vuejs.png" alt="VueJS">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="hero is-dark">
         <div class="hero-body">
             <div class="columns">
@@ -63,25 +87,28 @@
                             @{{ response }}
                         </div>
                         <form @submit="validateBeforeSubmit" v-if="!response">
-                            <div class="control is-grouped is-desktop" v-if="!isMobile" v-cloak>
-                                <p class="control is-expanded has-icon has-icon-right" v-cloak>
-                                    <input class="input is-large has-text-centered" :class="{'is-danger' : errors.has('email')}" v-validate
-                                           data-vv-rules="required|email" type="email" name="email" placeholder="Email"
-                                           v-cloak  v-model="email">
-                                    <i class="fa fa-check"></i>
-                                </p>
-                                <p class="control" v-cloak>
-                                    <button :disabled="busy" type="submit"class="button is-large is-primary is-outlined" v-cloak>Avísame</button>
-                                </p>
-                            </div>
-                            <p class="control has-addons is-mobile" v-if="isMobile" v-cloak >
-                                <input class="input is-expanded has-text-centered" v-validate data-vv-rules="required|email"
-                                       type="email" placeholder="Email" v-cloak name="email"
-                                       v-model="email">
-                                <button :disabled="busy" type="submit" class="button is-primary is-outlined" v-cloak>
-                                    Avísame
+                        <div class="control is-grouped is-desktop" v-if="!isMobile" v-cloak>
+                            <p class="control is-expanded has-icon has-icon-right" v-cloak>
+                                <input class="input is-large has-text-centered"
+                                       :class="{'is-danger' : errors.has('email')}" v-validate
+                                       data-vv-rules="required|email" type="email" name="email" placeholder="Email"
+                                       v-cloak v-model="email">
+                                <i class="fa fa-check"></i>
+                            </p>
+                            <p class="control" v-cloak>
+                                <button :disabled="busy" type="submit" class="button is-large is-primary is-outlined"
+                                        v-cloak>Avísame
                                 </button>
                             </p>
+                        </div>
+                        <p class="control has-addons is-mobile" v-if="isMobile" v-cloak>
+                            <input class="input is-expanded has-text-centered" v-validate data-vv-rules="required|email"
+                                   type="email" placeholder="Email" v-cloak name="email"
+                                   v-model="email">
+                            <button :disabled="busy" type="submit" class="button is-primary is-outlined" v-cloak>
+                                Avísame
+                            </button>
+                        </p>
                         </form>
                     </section>
                 </div>
@@ -205,13 +232,13 @@
                         <div class="columns">
                             <div class="column is-half">
                                 <a href="http://laraveles.com" class="image sponsor has-text-centered">
-                                        <img src="/images/sponsors/laraveles.png">
+                                    <img src="/images/sponsors/laraveles.png">
                                 </a>
                             </div>
 
                             <div class="column is-half">
                                 <a href="https://vuejobs.com" class="image sponsor has-text-centered">
-                                        <img src="/images/sponsors/vuejobs.png">
+                                    <img src="/images/sponsors/vuejobs.png">
                                 </a>
                             </div>
                         </div>
@@ -219,17 +246,17 @@
                         <div class="columns">
                             <div class="column">
                                 <a href="https://coosto.com" class="image sponsor has-text-centered">
-                                        <img src="/images/sponsors/coosto.png">
+                                    <img src="/images/sponsors/coosto.png">
                                 </a>
                             </div>
                             <div class="column">
                                 <a href="https://mosaiqo.com" class="image sponsor has-text-centered">
-                                        <img src="/images/sponsors/mosaiqo.png">
+                                    <img src="/images/sponsors/mosaiqo.png">
                                 </a>
                             </div>
                             <div class="column">
                                 <a href="https://ulab.es" class="image sponsor has-text-centered">
-                                        <img src="/images/sponsors/ulab.png">
+                                    <img src="/images/sponsors/ulab.png">
                                 </a>
                             </div>
                         </div>

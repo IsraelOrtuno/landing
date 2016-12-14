@@ -6293,7 +6293,7 @@ html .container .is-fluid, body .container .is-fluid {
   background-size: cover;
 }
 
-.parallax h1.title, .parallax h2.subtitle {
+.parallax h1.title, .parallax h2.subtitle, .parallax h3.subtitle {
   -webkit-animation: change-color-to-white 25s linear forwards;
   animation: change-color-to-white 25s linear forwards;
 }
@@ -6372,6 +6372,11 @@ html .container .is-fluid, body .container .is-fluid {
 }
 
 .links.logos > a img {
+  color: white;
+  width: 150px;
+}
+
+.links.logos > img {
   color: white;
   width: 150px;
 }
