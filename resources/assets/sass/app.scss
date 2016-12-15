@@ -67,10 +67,12 @@ figure + .title {
 a.image.sponsor:not(.button) {
   text-decoration: none !important;
   border-bottom: none !important;
-  display: block;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
   img {
-    height: 55px;
     width: auto !important;
     display: inline;
   }

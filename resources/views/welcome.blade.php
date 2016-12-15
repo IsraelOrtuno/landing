@@ -237,16 +237,16 @@
                             </div>
 
                             <div class="column is-half">
-                                <a href="https://vuejobs.com" class="image sponsor has-text-centered">
-                                    <img src="/images/sponsors/vuejobs.png">
+                                <a href="https://coosto.com" class="image sponsor has-text-centered">
+                                    <img src="/images/sponsors/coosto.png">
                                 </a>
                             </div>
                         </div>
 
                         <div class="columns">
                             <div class="column">
-                                <a href="https://coosto.com" class="image sponsor has-text-centered">
-                                    <img src="/images/sponsors/coosto.png">
+                                <a href="https://vuejobs.com" class="image sponsor has-text-centered">
+                                    <img src="/images/sponsors/vuejobs.png">
                                 </a>
                             </div>
                             <div class="column">
