@@ -245,7 +245,7 @@
 
                         <div class="columns">
                             <div class="column">
-                                <a href="https://vuejobs.com" class="image sponsor has-text-centered">
+                                <a href="https://vuejobs.com/?ref=webartisans" class="image sponsor has-text-centered">
                                     <img src="/images/sponsors/vuejobs.png">
                                 </a>
                             </div>
