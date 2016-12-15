@@ -7,12 +7,10 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta name="description" content="Ya se está trabajando para la primera conferencia de Laravel + Vue.js en España.">
     <title>{{ config('app.name', 'Web Artisans') }}</title>
-
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
