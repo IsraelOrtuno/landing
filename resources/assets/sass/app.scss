@@ -36,8 +36,17 @@ html, body {
 }
 
 @import "mobile";
-@media only screen and (min-width: 980px) {
+
+@media only screen and (min-width: 769px) and (max-width: 979px){
+  @import "tablet";
+}
+
+@media only screen and (min-width: 980px) and (max-width: 1920px){
   @import "desktop";
+}
+
+@media only screen and (min-width: 1920px) {
+  @import "widescreen";
 }
 
 .links > a {
@@ -53,11 +62,13 @@ html, body {
 .links.logos > a img{
   color: $white;
   width: 150px;
+  margin: 0 auto !important;
 }
 
 .links.logos > img{
   color: $white;
   width: 150px;
+  margin: 0 auto !important;
 }
 
 figure + .title {

@@ -12,16 +12,16 @@
                         <h4 class="subtitle is-6 has-text-centered has-text-centered">
 
                         </h4>
-                        <h2 class="subtitle is-3 has-text-centered is-desktop" v-if="!isMobile" v-cloak>
+                        <h2 class="subtitle is-3 has-text-centered is-desktop is-hidden-mobile">
                             1ª Conferencia Laravel & VueJs en España
                         </h2>
-                        <h3 class="subtitle is-4 has-text-centered is-desktop" v-cloak v-if="!isMobile">
+                        <h3 class="subtitle is-4 has-text-centered is-desktop is-hidden-mobile">
                             Alicante
                         </h3>
                     </div>
                 </div>
             </section>
-            <div class="columns">
+            <div class="columns is-half-desktop is-hidden-touch">
                 <div class="column is-one-third is-offset-one-third">
                     <div class="links level" v-if="showLinks" v-cloak>
                         <a href="/#speakers" class="level-item has-text-centered">Speakers</a>
@@ -44,9 +44,9 @@
         </div>
     </div>
 
-    <div class="hero is-clear is-mobile" v-if="isMobile" v-cloak>
+    <div class="hero is-clear is-mobile is-hidden-desktop">
         <div class="hero-body">
-            <div class="columns  is-mobile">
+            <div class="columns is-mobile">
                 <div class="column">
                     <h2 class="subtitle is-3 has-text-centered is-mobile">
                         1ª Conferencia Laravel & VueJs en España
@@ -57,13 +57,13 @@
                 </div>
             </div>
             <div class="columns is-mobile">
-                <div class="column has-text-centered">
-                    <div class="links level logos" v-if="isMobile">
+                <div class="column is-half ">
+                    <div class="links level has-text-centered logos">
                         <img src="/images/laravel.png" alt="Laravel">
                     </div>
                 </div>
-                <div class="column has-text-centered">
-                    <div class="links level logos" v-if="isMobile">
+                <div class="column is-half">
+                    <div class="links level has-text-centered logos">
                         <img src="/images/vuejs.png" alt="VueJS">
                     </div>
                 </div>
@@ -119,14 +119,14 @@
     <div class="hero is-medium is-clear">
         <a name="speakers"> </a>
         <div class="hero-body">
-            <div class="columns">
-                <div class="column is-half is-offset-one-quarter">
+            <div class="columns is-mobile is-multiline">
+                <div class="column is-half-desktop is-half-tablet is-offset-one-quarter-tablet is-offset-one-quarter-desktop is-mobile">
                     <section class="content is-large has-text-centered is-secondary has-normal-font">
                         <h1 class="title">
                             Speakers
                         </h1>
-                        <div class="columns">
-                            <div class="column">
+                        <div class="columns is-multiline is-mobile is-half-tablet">
+                            <div class="column is-full-mobile is-half-tablet is-half-desktop is-one-third-widescreen">
                                 <article class="tile is-child box">
                                     <figure class="image is-1by1">
                                         <img src="/images/speakers/@alexjoverm.jpg">
@@ -137,7 +137,7 @@
                                     </p>
                                 </article>
                             </div>
-                            <div class="column">
+                            <div class="column is-full-mobile is-half-tablet is-half-desktop is-one-third-widescreen">
                                 <article class="tile is-child box">
                                     <figure class="image is-1by1">
                                         <img src="/images/speakers/@esclapes.jpg">
@@ -148,7 +148,7 @@
                                     </p>
                                 </article>
                             </div>
-                            <div class="column">
+                            <div class="column is-full-mobile is-half-tablet is-half-desktop is-one-third-widescreen">
                                 <article class="tile is-child box">
                                     <figure class="image is-1by1">
                                         <img src="/images/speakers/@boudydegeer.jpg">
@@ -159,7 +159,7 @@
                                     </p>
                                 </article>
                             </div>
-                            <div class="column">
+                            <div class="column is-full-mobile is-half-tablet is-half-desktop is-one-third-widescreen">
                                 <article class="tile is-child box">
                                     <figure class="image is-1by1">
                                         <img src="https://placeholdit.imgix.net/~text?txtsize=60&txt=%C2%BFTienes%20algo%20que%20contar?&w=400&h=400">
@@ -167,7 +167,7 @@
                                     <p class="title">Aquí tu nombre</p>
                                     <p class="subtitle">
                                         <a href="mailto:team+speaker@webartisans.es">
-                                            Envianos un email
+                                            Contacta
                                         </a>
                                     </p>
                                 </article>
@@ -181,14 +181,14 @@
     <div class="hero is-medium is-clear">
         <div class="hero-body">
             <a name="localizacion"> </a>
-            <div class="columns">
-                <div class="column is-half is-offset-one-quarter">
+            <div class="columns is-mobile">
+                <div class="column is-half-tablet is-offset-one-quarter-tablet is-full-mobile">
                     <section class="content is-large has-text-centered is-secondary has-normal-font">
                         <h1 class="title">
                             Localización
                         </h1>
-                        <div class="columns">
-                            <div class="column is-half has-text-left">
+                        <div class="columns is-multiline is-mobile">
+                            <div class="column is-half-desktop is-full-tablet is-full-mobile has-text-left">
                                 <p>
                                     Un gran evento necesita unas grandes instalaciones. El auditorio de ULab en el
                                     centro
@@ -200,7 +200,7 @@
                                 </p>
                             </div>
 
-                            <div class="column is-half">
+                            <div class="column is-half-desktop is-full-tablet is-full-mobile is-block-desktop-only">
                                 <figure class="image is-4by3">
                                     <img src="/images/ulab.jpg">
                                 </figure>
