@@ -9,15 +9,9 @@
                         <h1 class="title is-1 has-text-centered">
                             Web Artisans Conference
                         </h1>
-                        <h4 class="subtitle is-6 has-text-centered has-text-centered">
-
-                        </h4>
-                        <h2 class="subtitle is-3 has-text-centered is-desktop is-hidden-mobile">
-                            1ª Conferencia Laravel & VueJs en España
+                        <h2 class="subtitle is-2 has-text-centered">
+                            #Spain #Alicante
                         </h2>
-                        <h3 class="subtitle is-4 has-text-centered is-desktop is-hidden-mobile">
-                            Alicante
-                        </h3>
                     </div>
                 </div>
             </section>
@@ -25,18 +19,8 @@
                 <div class="column is-one-third is-offset-one-third">
                     <div class="links level" v-if="showLinks" v-cloak>
                         <a href="/#speakers" class="level-item has-text-centered">Speakers</a>
-                        <a href="/#localizacion" class="level-item has-text-centered">Localizacion</a>
+                        <a href="/#localizacion" class="level-item has-text-centered">Localización</a>
                         <a href="/#sponsors" class="level-item has-text-centered">Sponsors</a>
-                    </div>
-
-                    <div class="links level logos" v-if="showLinks && !isMobile" v-cloak>
-                        <a href="http://laravel.com" target="_blank" class="level-item has-text-centered">
-                            <img src="/images/laravel.png" alt="Laravel">
-                        </a>
-                        <span class="title is-1 is-white"> + </span>
-                        <a href="http://vuejs.org" target="_blank" class="level-item has-text-centered">
-                            <img src="/images/vuejs.png" alt="VueJS">
-                        </a>
                     </div>
                 </div>
             </div>
@@ -44,29 +28,26 @@
         </div>
     </div>
 
-    <div class="hero is-clear is-mobile is-hidden-desktop">
+    <div class="hero is-dark is-mobile">
         <div class="hero-body">
             <div class="columns is-mobile">
                 <div class="column">
-                    <h2 class="subtitle is-3 has-text-centered is-mobile">
+                    <h2 class="subtitle is-3 has-text-centered">
                         1ª Conferencia Laravel & VueJs en España
                     </h2>
-                    <h3 class="subtitle is-4 has-text-centered is-mobile">
+                    <h3 class="subtitle is-4 has-text-centered">
                         Alicante
                     </h3>
                 </div>
             </div>
-            <div class="columns is-mobile">
-                <div class="column is-half ">
-                    <div class="links level has-text-centered logos">
-                        <img src="/images/laravel.png" alt="Laravel">
-                    </div>
-                </div>
-                <div class="column is-half">
-                    <div class="links level has-text-centered logos">
-                        <img src="/images/vuejs.png" alt="VueJS">
-                    </div>
-                </div>
+            <div class="links logos" v-if="showLinks && !isMobile" v-cloak>
+                <a href="http://laravel.com" target="_blank" class="level-item has-text-centered">
+                    <img src="/images/laravel.png" alt="Laravel">
+                </a>
+                <span class="title is-1 is-white"> + </span>
+                <a href="http://vuejs.org" target="_blank" class="level-item has-text-centered">
+                    <img src="/images/vuejs.png" alt="VueJS">
+                </a>
             </div>
         </div>
     </div>

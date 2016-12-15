@@ -6339,6 +6339,29 @@ html .container .is-fluid, body .container .is-fluid {
   display: block;
 }
 
+.logos {
+  -webkit-box-flex: 0;
+  flex: 0 0 200px;
+  max-width: 100%;
+  margin: 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.logos a, .logos span {
+  display: inline-block;
+}
+
+.links.logos > a img {
+  color: white;
+  width: 100px;
+  margin: 0 auto !important;
+}
+
 @media only screen and (min-width: 769px) and (max-width: 979px) {
   .parallax {
     /* The image used */
@@ -6359,13 +6382,24 @@ html .container .is-fluid, body .container .is-fluid {
   .parallax .hero h2.subtitle {
     margin-bottom: 1em;
   }
+  .logos {
+    -webkit-box-flex: 0;
+    flex: 0 0 200px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .links.logos > a img {
+    color: white;
+    width: 150px;
+    margin: 0 auto !important;
+  }
 }
 
 @media only screen and (min-width: 980px) and (max-width: 1920px) {
   .parallax {
     /* The image used */
     /* Full height */
-    height: 530px;
+    height: 480px;
     /* Create the parallax scrolling effect */
     background: url("/images/alicante-skyline.svg") no-repeat fixed center top;
     background-size: contain;
@@ -6403,6 +6437,11 @@ html .container .is-fluid, body .container .is-fluid {
   .parallax .hero h2.subtitle {
     margin-bottom: 1em;
   }
+  .links.logos > a img {
+    color: white;
+    width: 250px;
+    margin: 0 auto !important;
+  }
 }
 
 .links > a {
@@ -6413,18 +6452,6 @@ html .container .is-fluid, body .container .is-fluid {
   letter-spacing: .1rem;
   text-decoration: none;
   text-transform: uppercase;
-}
-
-.links.logos > a img {
-  color: white;
-  width: 150px;
-  margin: 0 auto !important;
-}
-
-.links.logos > img {
-  color: white;
-  width: 150px;
-  margin: 0 auto !important;
 }
 
 figure + .title {

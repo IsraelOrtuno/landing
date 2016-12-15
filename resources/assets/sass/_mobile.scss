@@ -66,3 +66,22 @@ html, body {
 .nav-menu-show {
   display: block;
 }
+
+.logos {
+  flex: 0 0 200px;
+  max-width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a, span {
+    display: inline-block;
+  }
+}
+
+.links.logos > a img {
+  color: $white;
+  width: 100px;
+  margin: 0 auto !important;
+}
+

@@ -23,4 +23,16 @@
   }
 }
 
+.logos {
+  flex: 0 0 200px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.links.logos > a img {
+  color: $white;
+  width: 150px;
+  margin: 0 auto !important;
+}
+
 

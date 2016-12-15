@@ -21,6 +21,9 @@ html, body {
   height: 100vh;
   overflow: scroll;
 }
+.skyline{
+
+}
 
 .is-clear {
   background-color: $white;
@@ -59,17 +62,6 @@ html, body {
   text-transform: uppercase;
 }
 
-.links.logos > a img{
-  color: $white;
-  width: 150px;
-  margin: 0 auto !important;
-}
-
-.links.logos > img{
-  color: $white;
-  width: 150px;
-  margin: 0 auto !important;
-}
 
 figure + .title {
   margin-top: 1em;
