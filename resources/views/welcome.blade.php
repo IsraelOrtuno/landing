@@ -107,17 +107,17 @@
                             Speakers
                         </h1>
                         <div class="columns is-multiline is-mobile is-half-tablet">
-                            <div class="column is-full-mobile is-half-tablet is-half-desktop is-one-third-widescreen">
-                                <article class="tile is-child box">
-                                    <figure class="image is-1by1">
-                                        <img src="/images/speakers/@alexjoverm.jpg">
-                                    </figure>
-                                    <p class="title">Alex Jover Morales</p>
-                                    <p class="subtitle">
-                                        <a href="https://twitter.com/alexjoverm" target="_blank">@alexjoverm</a>
-                                    </p>
-                                </article>
-                            </div>
+                            {{--<div class="column is-full-mobile is-half-tablet is-half-desktop is-one-third-widescreen">--}}
+                                {{--<article class="tile is-child box">--}}
+                                    {{--<figure class="image is-1by1">--}}
+                                        {{--<img src="/images/speakers/@alexjoverm.jpg">--}}
+                                    {{--</figure>--}}
+                                    {{--<p class="title">Alex Jover Morales</p>--}}
+                                    {{--<p class="subtitle">--}}
+                                        {{--<a href="https://twitter.com/alexjoverm" target="_blank">@alexjoverm</a>--}}
+                                    {{--</p>--}}
+                                {{--</article>--}}
+                            {{--</div>--}}
                             <div class="column is-full-mobile is-half-tablet is-half-desktop is-one-third-widescreen">
                                 <article class="tile is-child box">
                                     <figure class="image is-1by1">
