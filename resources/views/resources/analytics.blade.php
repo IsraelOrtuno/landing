@@ -11,7 +11,7 @@
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-92718341-1', 'auto');
+    ga('create', 'XXXXXXXX', 'auto');
     ga('send', 'pageview');
 
 </script>
